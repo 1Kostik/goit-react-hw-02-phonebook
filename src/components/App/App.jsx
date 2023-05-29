@@ -4,14 +4,12 @@ import { nanoid } from 'nanoid';
 import  Filter  from '../Filter/Filter';
 import { Title, Subtitle, Container } from './App.styled';
 import ContactList from '../ContactList/ContactList';
-
    
 export class App extends Component {
   state = {
     contacts: [],
     filter: '',
   };
-
   handlerSubmit = data => {
     const { name, number } = data;
     const newContact = {
@@ -49,7 +47,6 @@ export class App extends Component {
       <Container>
         <Title>Phonebook</Title>
         <ContactForm onSubmit={this.handlerSubmit} />
-
         <Subtitle>Contacts</Subtitle>
         <Filter value={filter} onFilter={this.onFilter} />
         <ContactList
